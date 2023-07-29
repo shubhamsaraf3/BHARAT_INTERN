@@ -1,0 +1,89 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
+import javax.swing.DropMode;
+import javax.swing.JInternalFrame;
+import javax.swing.JToolBar;
+import javax.swing.JPanel;
+import javax.swing.JTextPane;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+
+public class temp_scale {
+
+	private JFrame frame;
+	private JTextField textField1;
+	private JTextField textField2;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					temp_scale window = new temp_scale();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public temp_scale() {
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setForeground(new Color(0, 0, 0));
+		frame.getContentPane().setBackground(new Color(221, 221, 221));
+		frame.setBounds(100, 100, 485, 390);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JTextArea txt_header = new JTextArea();
+		txt_header.setForeground(new Color(0, 0, 0));
+		txt_header.setEditable(false);
+		txt_header.setToolTipText("");
+		txt_header.setText("\r\n          Temperature Convertor by SHUBHAM");
+		txt_header.setBounds(0, 0, 469, 78);
+		txt_header.setRows(1);
+		txt_header.setFont(new Font("Bookman Old Style", Font.BOLD, 18));
+		txt_header.setBackground(SystemColor.activeCaption);
+		frame.getContentPane().add(txt_header);
+		
+		JButton btnConvert = new JButton("CONVERT");
+		btnConvert.setBounds(169, 262, 100, 36);
+		frame.getContentPane().add(btnConvert);
+		
+		JButton btnClear = new JButton("CLEAR");
+		btnClear.setBounds(293, 262, 100, 36);
+		frame.getContentPane().add(btnClear);
+		
+		JComboBox comboBox1 = new JComboBox();
+		comboBox1.setBounds(44, 118, 65, 31);
+		frame.getContentPane().add(comboBox1);
+		
+		textField1 = new JTextField();
+		textField1.setBounds(143, 111, 270, 44);
+		frame.getContentPane().add(textField1);
+		textField1.setColumns(10);
+		
+		textField2 = new JTextField();
+		textField2.setColumns(10);
+		textField2.setBounds(143, 191, 270, 44);
+		frame.getContentPane().add(textField2);
+		
+		JComboBox comboBox2 = new JComboBox();
+		comboBox2.setBounds(44, 198, 65, 31);
+		frame.getContentPane().add(comboBox2);
+	}
+}

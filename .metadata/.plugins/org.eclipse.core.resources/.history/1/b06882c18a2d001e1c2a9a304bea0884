@@ -1,0 +1,56 @@
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JTextArea;
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.SystemColor;
+import javax.swing.UIManager;
+import javax.swing.DropMode;
+import javax.swing.JInternalFrame;
+
+public class temp_scale {
+
+	private JFrame frame;
+
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					temp_scale window = new temp_scale();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	public temp_scale() {
+		initialize();
+	}
+
+	private void initialize() {
+		frame = new JFrame();
+		frame.getContentPane().setForeground(new Color(0, 0, 0));
+		frame.getContentPane().setBackground(new Color(221, 221, 221));
+		frame.setBounds(100, 100, 485, 336);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getContentPane().setLayout(null);
+		
+		JTextArea txt_header = new JTextArea();
+		txt_header.setForeground(new Color(0, 0, 0));
+		txt_header.setEditable(false);
+		txt_header.setToolTipText("");
+		txt_header.setText("\n                    Temperature Convertor by SHUBHAM");
+		txt_header.setBounds(0, 0, 469, 50);
+		txt_header.setRows(1);
+		txt_header.setFont(new Font("Microsoft JhengHei", Font.BOLD, 16));
+		txt_header.setBackground(new Color(175, 238, 238));
+		frame.getContentPane().add(txt_header);
+	}
+}
